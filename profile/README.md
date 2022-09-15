@@ -7,4 +7,4 @@
 ### Repo Con Ejercicios/Ejemplos >> [LP2 2022](https://github.com/UF-LP2/UF_FICEN_AYUDANTIA_LP2_2022_2C)
 
 ---
-##### Universidad Favaloro
+##### Universidad Favaloro - Facultad de Ingeniería y Ciencias Naturales
