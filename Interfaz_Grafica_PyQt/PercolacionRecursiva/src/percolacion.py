@@ -106,7 +106,7 @@ class Window(QMainWindow):
 		layout.addWidget(self.__botonGenerarMatriz, 4, 1, 1, 1)
 		layout.addWidget(self.__botonPercolar, 5, 1, 1, 1)
 		layout.setColumnStretch(0, 3)
-		layout.setRowStretch(6, 0)
+		layout.setRowStretch(8, 0)
 
 		# Configuraciones del widget central y del layout
 		widgetCentral.setLayout(layout)
