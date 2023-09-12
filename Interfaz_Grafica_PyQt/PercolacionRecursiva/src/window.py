@@ -1,6 +1,7 @@
 from PyQt6.QtWidgets import QMainWindow, QSpinBox, QWidget, QPushButton, QGridLayout, QSlider, QLabel
 from PyQt6.QtCore import Qt
 from src.painter import Painter
+from src.percolador import percolar
 import random
 
 class Window(QMainWindow):
@@ -112,20 +113,6 @@ class Window(QMainWindow):
 		widgetCentral.setLayout(layout)
 		self.setCentralWidget(widgetCentral)
 
-	def __percolar(self, posx: int, posy: int):
-		# Condiciones de salida (Que los valores de "x" e "y" excedan el tama?o de la matriz o que la matriz en la posici?n dada sea != 0)
-		if (posx < 0 or posy < 0 or posx >= self.__tam or posy >= self.__tam or self.__matriz[posx][posy] != 0):
-			return
-
-		# Asignamos un valor 2 en la posici?n "x" e "y" de la matriz que sera representado como agua
-		self.__matriz[posx][posy] = 2
-
-		#Pasamos a las posiciones adyacentes
-		self.__percolar(posx, posy + 1)
-		self.__percolar(posx + 1, posy)
-		self.__percolar(posx - 1, posy)
-		self.__percolar(posx, posy - 1)
-
 	def _BotonGenerarMatriz(self):
 		self.__tam=self.__SBTam.value()
 		self.__matriz=[ [ None for y in range(self.__tam) ] for x in range(self.__tam) ]
@@ -146,16 +133,10 @@ class Window(QMainWindow):
 		self.__botonPercolar.setEnabled(True)
 
 	def _BotonPercolar(self):
-		for i in range(0, self.__tam):
-			if (self.__matriz[i][0] == 0):
-				self.__percolar(i, 0)
+
+		flag, self.__matriz=percolar(self.__matriz)
 
 		self.__painter.update()
-
-		flag=False
-		for i in range(0, len(self.__matriz)):
-			if(self.__matriz[i][-1]==2):
-				flag=True
 
 		if(flag):
 			self.__labelPercolacion.setStyleSheet("color: green; font-weight: bold")

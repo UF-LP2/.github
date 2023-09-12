@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QApplication
-from src.percolacion import Window
+from src.window import Window
 
 '''
 Ejecución del programa

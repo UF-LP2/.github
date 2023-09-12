@@ -15,7 +15,6 @@ class Painter(QWidget):
 			QSizePolicy.Policy.MinimumExpanding
 		)
 		self.__painter=QPainter()
-		self.__painter.setPen(QPen(QColor(0,0,0), 1))
 		
 	def setMatriz(self, mat):
 		"""Seter de la matriz
@@ -46,6 +45,7 @@ class Painter(QWidget):
 
 		# Dibujo mi matriz
 		self.__painter.begin(self)
+		self.__painter.setPen(QPen(QColor(0,0,0), 1))
 		for i in range(0,largo):
 			for j in range(0,largo):
 				self.__painter.drawRect(tamSize*i,tamSize*j,tamSize,tamSize)
