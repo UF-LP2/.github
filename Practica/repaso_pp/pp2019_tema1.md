@@ -11,8 +11,6 @@ b)¿Cuál es su complejidad?
 c)Explique cómo su algoritmo exhibe comportamiento óptimo local (Opcional)
 ```
 
-## (mycompiler.io: Máxima Distancia con algoritmos variados)[https://www.mycompiler.io/view/3sdCgjJ3Xsj]
-
 ### Función base
 ```py
 def Distancia(a: tuple[int, int], b: tuple[int, int]) -> float:
@@ -84,7 +82,10 @@ def MaximaDistancia_DP(arr_i: list[int, int], arr_ii: list[int, int]) -> float:
     maxima: float = max(distancias)
     return maxima
 ```
-
+#### Probar los algoritmos:
+- [mycompiler.io: Máxima Distancia con algoritmos variados](https://www.mycompiler.io/view/3sdCgjJ3Xsj)
+-----
+## Discución
 ### Input
 ```py
 N = 15
